@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\krief\\My_Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|C:\\Users\\krief\\My_Game\\assets\\npcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\npcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|c:\\users\\krief\\my_game\\assets\\scripts\\notebookmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\notebookmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|c:\\users\\krief\\my_game\\assets\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|C:\\Users\\krief\\My_Game\\assets\\scripts\\npcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\npcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|C:\\Users\\krief\\My_Game\\assets\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|C:\\Users\\krief\\My_Game\\assets\\scripts\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DialogueManager.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\DialogueManager.cs",
-              "RelativeDocumentMoniker": "Assets\\DialogueManager.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\DialogueManager.cs",
-              "RelativeToolTip": "Assets\\DialogueManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "NotebookManager.cs",
+              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\NotebookManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NotebookManager.cs",
+              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\NotebookManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NotebookManager.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAuwGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T16:01:25.907Z",
+              "WhenOpened": "2025-03-23T11:43:39.12Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NPCDialogue.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\NPCDialogue.cs",
-              "RelativeDocumentMoniker": "Assets\\NPCDialogue.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\NPCDialogue.cs",
-              "RelativeToolTip": "Assets\\NPCDialogue.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Quest.cs",
+              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\Quest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Quest.cs",
+              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\Quest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Quest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T16:02:33.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T11:48:02.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DialogueManager.cs",
+              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\DialogueManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DialogueManager.cs",
+              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\DialogueManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DialogueManager.cs",
+              "ViewState": "AgIAAPYAAAAAAAAAAAAAAAYBAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T18:43:03.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NPCDialogue.cs",
+              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\NPCDialogue.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NPCDialogue.cs",
+              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\NPCDialogue.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NPCDialogue.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAAGwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T18:43:01.629Z"
             }
           ]
         }
