@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -23,6 +24,9 @@ public class DialogueManager : MonoBehaviour
     private bool waitingForExit = false;
     private bool showingNPCResponses = false;
 
+    private bool isTyping = false; // Флаг для отслеживания анимации текста
+    private float typingSpeed = 0.025f; // Скорость печатания текста
+
     public NPCDialogue npcDialogue; // Ссылка на NPCDialogue
 
     private void Awake()
@@ -46,7 +50,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         CreateUI();
-        dialogueText.text = npcLine;
+        StartCoroutine(TypeText(npcLine)); // Анимация текста при старте диалога
         currentChoices = choices;
         npcResponses = responses;
 
@@ -58,27 +62,27 @@ public class DialogueManager : MonoBehaviour
     {
         if (isDialogueActive)
         {
-            if (waitingForChoices && Input.GetMouseButtonDown(0))
+            if (waitingForChoices && Input.GetMouseButtonDown(0) && !isTyping)
             {
                 ShowChoices();
                 waitingForChoices = false;
             }
-            else if (waitingForExit && Input.GetMouseButtonDown(0))
+            else if (waitingForExit && Input.GetMouseButtonDown(0) && !isTyping)
             {
                 EndDialogue();
             }
 
             if (!waitingForChoices && !waitingForExit && showingNPCResponses)
             {
-                if (Input.GetMouseButtonDown(0) && currentResponseIndex < currentResponse.Count - 1)
+                if (Input.GetMouseButtonDown(0) && currentResponseIndex < currentResponse.Count - 1 && !isTyping)
                 {
-                    // Показываем следующую реплику NPC
+                    // Показываем следующую реплику NPC с анимацией
                     currentResponseIndex++;
-                    dialogueText.text = currentResponse[currentResponseIndex];
+                    StartCoroutine(TypeText(currentResponse[currentResponseIndex]));
                 }
-                else if (currentResponseIndex == currentResponse.Count - 1 && Input.GetMouseButtonDown(0))
+                else if (currentResponseIndex == currentResponse.Count - 1 && Input.GetMouseButtonDown(0) && !isTyping)
                 {
-                    // Все реплики NPC показаны, теперь можно выйти из диалога
+                    // Все реплики NPC показаны, завершаем диалог
                     EndDialogue();
                 }
             }
@@ -86,9 +90,12 @@ public class DialogueManager : MonoBehaviour
             // Если есть ответ, переключаем реплики NPC
             if (!waitingForChoices && !waitingForExit && !showingNPCResponses)
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1)) ChooseResponse(1);
-                if (Input.GetKeyDown(KeyCode.Alpha2)) ChooseResponse(2);
-                if (Input.GetKeyDown(KeyCode.Alpha3)) ChooseResponse(3);
+                if (!isTyping)
+                {
+                    if (Input.GetKeyDown(KeyCode.Alpha1)) ChooseResponse(1);
+                    if (Input.GetKeyDown(KeyCode.Alpha2)) ChooseResponse(2);
+                    if (Input.GetKeyDown(KeyCode.Alpha3)) ChooseResponse(3);
+                }
             }
         }
     }
@@ -122,7 +129,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.fontSize = 60;
         dialogueText.alignment = TextAlignmentOptions.Center;
         dialogueText.color = Color.white;
-        dialogueText.font = Resources.Load<TMP_FontAsset>("Fonts/YourFont");
+        dialogueText.font = Resources.Load<TMP_FontAsset>("Fonts/Ponomar-Regular");
 
         RectTransform textRect = textObj.GetComponent<RectTransform>();
         textRect.anchorMin = new Vector2(0.1f, 0.5f);
@@ -146,6 +153,20 @@ public class DialogueManager : MonoBehaviour
         hintRect.offsetMax = Vector2.zero;
     }
 
+    private IEnumerator TypeText(string textToType)
+    {
+        isTyping = true;
+        dialogueText.text = "";
+
+        foreach (char c in textToType)
+        {
+            dialogueText.text += c;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        isTyping = false;
+    }
+
     private void ShowChoices()
     {
         // Очищаем первую реплику NPC
@@ -160,8 +181,8 @@ public class DialogueManager : MonoBehaviour
         RectTransform choicesRect = choicesContainer.AddComponent<RectTransform>();
 
         // Размещаем контейнер в пределах темного фона (нижняя часть экрана)
-        choicesRect.anchorMin = new Vector2(0.3f, 0f);  // Начало слева внизу
-        choicesRect.anchorMax = new Vector2(0.9f, 0.3f); // Конец справа, занимает 30% высоты
+        choicesRect.anchorMin = new Vector2(0.3f, 0f);
+        choicesRect.anchorMax = new Vector2(0.9f, 0.3f);
         choicesRect.offsetMin = Vector2.zero;
         choicesRect.offsetMax = Vector2.zero;
 
@@ -181,16 +202,15 @@ public class DialogueManager : MonoBehaviour
             buttonText.fontSize = 30;
             buttonText.alignment = TextAlignmentOptions.Left; // Выравниваем текст влево
             buttonText.color = Color.white;
-            buttonText.font = Resources.Load<TMP_FontAsset>("Fonts/YourFont");
+            buttonText.font = Resources.Load<TMP_FontAsset>("Fonts/Ponomar-Regular");
 
             RectTransform btnRect = buttonObj.GetComponent<RectTransform>();
-            btnRect.anchorMin = new Vector2(0f, 0.5f); // Выравниваем по левому краю контейнера
+            btnRect.anchorMin = new Vector2(0f, 0.5f);
             btnRect.anchorMax = new Vector2(1f, 0.5f);
             btnRect.pivot = new Vector2(0.5f, 0.5f);
-            btnRect.sizeDelta = new Vector2(0, choiceHeight); // Фиксируем высоту
+            btnRect.sizeDelta = new Vector2(0, choiceHeight);
 
-            // Размещаем кнопки снизу вверх
-            btnRect.anchoredPosition = new Vector2(0, startY - i * (choiceHeight + spacing));  // Меняем на startY - i
+            btnRect.anchoredPosition = new Vector2(0, startY - i * (choiceHeight + spacing));
 
             int choiceIndex = i + 1;
             button.onClick.AddListener(() => ChooseResponse(choiceIndex));
@@ -203,23 +223,27 @@ public class DialogueManager : MonoBehaviour
     {
         if (npcResponses.ContainsKey(choice))
         {
-            
             // Очищаем варианты выбора
             Destroy(choicesContainer);
             choiceButtons.Clear();
 
+            // Если выбран первый вариант, вызываем метод-заглушку для обновления блокнота
+            if (choice == 1)
+            {
+                UpdateNotebook("Вы выбрали первый вопрос.");
+            }
+
             // Показываем ответы NPC
             currentResponse = npcResponses[choice];
             currentResponseIndex = 0;
-            dialogueText.text = currentResponse[currentResponseIndex];
+            StartCoroutine(TypeText(currentResponse[currentResponseIndex])); // Анимация текста
 
             if (choice == 3)
             {
-                EndDialogue(); // Завершаем диалог
+                EndDialogue();
                 return;
             }
 
-            // Начинаем показывать реплики NPC по очереди
             showingNPCResponses = true;
         }
     }
@@ -230,6 +254,12 @@ public class DialogueManager : MonoBehaviour
         Destroy(dialogueUI);
         isDialogueActive = false;
         waitingForExit = false;
+
         showingNPCResponses = false; // сбрасываем состояние   
+    }
+
+    private void UpdateNotebook(string entry)
+    {
+        Debug.Log($"Запись добавлена в блокнот: {entry}");
     }
 }
