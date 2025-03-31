@@ -27,7 +27,6 @@ public class NPCDialogue : MonoBehaviour
 
     [SerializeField] private Quest assignedQuest; // Задание, связанное с NPC
 
-
     private void Start()
     {
         // Проверяем, назначен ли объект InteractionHint
@@ -105,9 +104,7 @@ public class NPCDialogue : MonoBehaviour
     public void StartDialogue()
     {
 
-        NotebookManager notebook = FindObjectOfType<NotebookManager>();
-        notebook.AddQuest(assignedQuest);
-
+        
         // Логика запуска диалога
         if (isDialogueActive) return;
 
@@ -136,8 +133,10 @@ public class NPCDialogue : MonoBehaviour
         isDialogueActive = false;
     }
 
-    public void AddingTask()
+    public void LogEntry()
     {
+        NotebookManager notebook = FindObjectOfType<NotebookManager>();
+        notebook.AddQuest(assignedQuest);
 
     }
 }

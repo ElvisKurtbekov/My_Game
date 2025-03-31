@@ -70,7 +70,6 @@ public class InstructionManager : MonoBehaviour
             Transform toggleTransform = instructionItem.transform.Find("QuestToggle"); // Название объекта с чекбоксом
             if (toggleTransform != null)
             {
-                Debug.Log($"Chmo&");
                 Destroy(toggleTransform.gameObject);
             }
 

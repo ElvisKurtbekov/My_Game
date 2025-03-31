@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     private bool waitingForChoices = false;
     private bool waitingForExit = false;
     private bool showingNPCResponses = false;
+    private bool isQuestAccepted = false;
 
     private bool isTyping = false; // Флаг для отслеживания анимации текста
     private float typingSpeed = 0.025f; // Скорость печатания текста
@@ -111,11 +113,12 @@ public class DialogueManager : MonoBehaviour
         scaler.referenceResolution = new Vector2(1920, 1080);
         dialogueUI.AddComponent<GraphicRaycaster>();
 
-        // Фон (панель)
+        // Фон (изображение)
         GameObject panelObj = new GameObject("DialoguePanel");
         panelObj.transform.SetParent(dialogueUI.transform);
         Image panelImage = panelObj.AddComponent<Image>();
-        panelImage.color = new Color(0, 0, 0, 0.9f);
+        panelImage.sprite = Resources.Load<Sprite>("DialogueBG"); // Загружаем изображение из ресурсов
+        panelImage.color = new Color(1, 1, 1, 1); // Устанавливаем полную видимость
         RectTransform panelRect = panelObj.GetComponent<RectTransform>();
         panelRect.anchorMin = new Vector2(0, 0);
         panelRect.anchorMax = new Vector2(1, 0.3f);
@@ -129,10 +132,9 @@ public class DialogueManager : MonoBehaviour
         dialogueText.fontSize = 60;
         dialogueText.alignment = TextAlignmentOptions.Center;
         dialogueText.color = Color.white;
-        dialogueText.font = Resources.Load<TMP_FontAsset>("Fonts/Ponomar-Regular");
-
+        dialogueText.font = Resources.Load<TMP_FontAsset>("Fonts/DearType SDF");
         RectTransform textRect = textObj.GetComponent<RectTransform>();
-        textRect.anchorMin = new Vector2(0.1f, 0.5f);
+        textRect.anchorMin = new Vector2(0.1f, 0.1f);
         textRect.anchorMax = new Vector2(0.9f, 0.9f);
         textRect.offsetMin = Vector2.zero;
         textRect.offsetMax = Vector2.zero;
@@ -152,6 +154,7 @@ public class DialogueManager : MonoBehaviour
         hintRect.offsetMin = Vector2.zero;
         hintRect.offsetMax = Vector2.zero;
     }
+
 
     private IEnumerator TypeText(string textToType)
     {
@@ -199,10 +202,10 @@ public class DialogueManager : MonoBehaviour
             TextMeshProUGUI buttonText = buttonObj.AddComponent<TextMeshProUGUI>();
 
             buttonText.text = (i + 1) + ". " + currentChoices[i];
-            buttonText.fontSize = 30;
+            buttonText.fontSize = 60;
             buttonText.alignment = TextAlignmentOptions.Left; // Выравниваем текст влево
             buttonText.color = Color.white;
-            buttonText.font = Resources.Load<TMP_FontAsset>("Fonts/Ponomar-Regular");
+            buttonText.font = Resources.Load<TMP_FontAsset>("Fonts/DearType SDF");
 
             RectTransform btnRect = buttonObj.GetComponent<RectTransform>();
             btnRect.anchorMin = new Vector2(0f, 0.5f);
@@ -228,9 +231,11 @@ public class DialogueManager : MonoBehaviour
             choiceButtons.Clear();
 
             // Если выбран первый вариант, вызываем метод-заглушку для обновления блокнота
-            if (choice == 1)
+            if (choice == 1 && !isQuestAccepted)
             {
-                UpdateNotebook("Вы выбрали первый вопрос.");
+                isQuestAccepted = !isQuestAccepted;
+                npcDialogue.LogEntry();
+                Debug.Log($"Квест добавлен в блокнот");
             }
 
             // Показываем ответы NPC
@@ -256,10 +261,5 @@ public class DialogueManager : MonoBehaviour
         waitingForExit = false;
 
         showingNPCResponses = false; // сбрасываем состояние   
-    }
-
-    private void UpdateNotebook(string entry)
-    {
-        Debug.Log($"Запись добавлена в блокнот: {entry}");
     }
 }
