@@ -1,0 +1,4 @@
+'Male Character with suite', In this asset pack you will get a high quality male character with 3 LODs. LOD_0 has 21811 polys,LOD_1 has 9229 polys and LOD_2 has 3420 polys. It has a optimized rig in it and it is ready to use Unity's motion library animations.You will get 7 variations of suite and 7 animations too. The animations are Walking,Sitting,Talking,Talking in phone,Running,Idle and Typing. This model has PBR texture maps and each texture maps are in 2k resolution. It is good for VR games and experiences, and other video games too. You do not need any plug in or script to run this. You will able to use this asset as long as your Unity supports PBR shaders. I have used a free post processing from the store to take screenshots.Please use the prefabs so that you will not loose any shader. Prefabs are ready with LODs and animations.
+
+Thanks
+SanuRenuArt
