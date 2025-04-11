@@ -27,6 +27,7 @@ public class NPCDialogue : MonoBehaviour
 
     [SerializeField] private Quest assignedQuest; // Задание, связанное с NPC
 
+
     private void Start()
     {
         // Проверяем, назначен ли объект InteractionHint
@@ -38,6 +39,7 @@ public class NPCDialogue : MonoBehaviour
         {
             Debug.LogError("Interaction hint text not assigned in the Inspector!");
         }
+
     }
 
     private void Update()
@@ -103,8 +105,8 @@ public class NPCDialogue : MonoBehaviour
 
     public void StartDialogue()
     {
+       
 
-        
         // Логика запуска диалога
         if (isDialogueActive) return;
 
@@ -119,6 +121,7 @@ public class NPCDialogue : MonoBehaviour
                 responseDict.Add(i + 1, npcResponses[i].responses);
             }
         }
+        
 
         DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
         if (dialogueManager != null)
@@ -131,6 +134,7 @@ public class NPCDialogue : MonoBehaviour
     public void EndDialogue()
     {
         isDialogueActive = false;
+
     }
 
     public void LogEntry()
@@ -139,4 +143,5 @@ public class NPCDialogue : MonoBehaviour
         notebook.AddQuest(assignedQuest);
 
     }
+    
 }

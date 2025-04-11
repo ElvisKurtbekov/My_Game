@@ -25,9 +25,7 @@ public class NotebookManager : MonoBehaviour
             quests = new List<Quest>();
         }
 
-        // Пример тестового задания !!!!УБРАТЬ ПОСЛЕ ДОБАВЛЕНИЯ ЗАДАНИЙ!!!!!
-        quests.Add(new Quest("Тестовое задание находится в скрипте NotebookManager", "Подробное описание тестового задания", false));
-        quests.Add(new Quest("Еще одно задание на 26 строке ", "Описание второго задания", false));
+
         RefreshQuestList();
     }
 
@@ -36,7 +34,7 @@ public class NotebookManager : MonoBehaviour
         // Открыть/закрыть блокнот по кнопке J
         if (Input.GetKeyDown(KeyCode.J))
         {
-            ToggleNotebook();     
+            ToggleNotebook();
         }
     }
 

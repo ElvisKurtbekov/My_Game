@@ -30,6 +30,10 @@ public class DialogueManager : MonoBehaviour
     private float typingSpeed = 0.025f; // Скорость печатания текста
 
     public NPCDialogue npcDialogue; // Ссылка на NPCDialogue
+    public Animator npcAnimator;
+    private bool isConversationComplete = false;
+    public PlayerMoney playerMoney;
+
 
     private void Awake()
     {
@@ -52,12 +56,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         CreateUI();
+        npcAnimator.SetBool("IsTalking", true);
         StartCoroutine(TypeText(npcLine)); // Анимация текста при старте диалога
         currentChoices = choices;
         npcResponses = responses;
 
         waitingForChoices = true;
         isDialogueActive = true;
+        isConversationComplete = false;
     }
 
     private void Update()
@@ -172,6 +178,8 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowChoices()
     {
+        npcAnimator.SetBool("IsTalking", false);
+        isConversationComplete = true;
         // Очищаем первую реплику NPC
         dialogueText.text = "";
 
@@ -224,6 +232,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ChooseResponse(int choice)
     {
+        npcAnimator.SetBool("IsTalking", true);
         if (npcResponses.ContainsKey(choice))
         {
             // Очищаем варианты выбора
@@ -259,7 +268,14 @@ public class DialogueManager : MonoBehaviour
         Destroy(dialogueUI);
         isDialogueActive = false;
         waitingForExit = false;
+        playerMoney = GameObject.FindWithTag("Player").GetComponent<PlayerMoney>();
+        playerMoney.AddMoney(100); // Даем 100 монет
+        bool success = playerMoney.SpendMoney(50); // Пробуем потратить 50
 
         showingNPCResponses = false; // сбрасываем состояние   
+        if (npcAnimator != null)
+        {
+            npcAnimator.SetBool("IsTalking", false); // если используешь bool
+        }
     }
 }
