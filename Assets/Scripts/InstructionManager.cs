@@ -73,6 +73,14 @@ public class InstructionManager : MonoBehaviour
                 Destroy(toggleTransform.gameObject);
             }
 
+            // Удаляем прогресс-бар, если он есть
+            Transform progressTransform = instructionItem.transform.Find("QuestProgress");
+            if (progressTransform != null)
+            {
+                Destroy(progressTransform.gameObject);
+            }
+
+
             // Устанавливаем название инструкции
             TMP_Text titleText = instructionItem.transform.Find("QuestName")?.GetComponent<TMP_Text>();
             if (titleText != null)
