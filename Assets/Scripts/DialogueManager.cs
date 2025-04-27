@@ -1,9 +1,10 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using TMPro;
-using System.Collections.Generic;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -24,150 +25,119 @@ public class DialogueManager : MonoBehaviour
     private bool waitingForChoices = false;
     private bool waitingForExit = false;
     private bool showingNPCResponses = false;
-    private bool isQuestAccepted = false;
+    private bool isTyping = false;
 
-    private bool isTyping = false; // Флаг для отслеживания анимации текста
-    private float typingSpeed = 0.025f; // Скорость печатания текста
+    private float typingSpeed = 0.025f;
 
-    public NPCDialogue npcDialogue; // Ссылка на NPCDialogue
+    public NPCDialogue npcDialogue;
+    public QuestCompletionDialogue questComplete;
     public Animator npcAnimator;
-    private bool isConversationComplete = false;
     public PlayerMoney playerMoney;
 
+    [SerializeField] private GameStatsManager statsManager; // Добавляем вверху
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
     }
 
     public void StartDialogue(string npcLine, List<string> choices, Dictionary<int, List<string>> responses)
     {
-        if (dialogueUI != null)
-        {
-            Destroy(dialogueUI);
-        }
+        if (dialogueUI != null) Destroy(dialogueUI);
 
         CreateUI();
-        npcAnimator.SetBool("IsTalking", true);
-        StartCoroutine(TypeText(npcLine)); // Анимация текста при старте диалога
+        npcAnimator?.SetBool("IsTalking", true);
+        StartCoroutine(TypeText(npcLine));
+
         currentChoices = choices;
         npcResponses = responses;
-
         waitingForChoices = true;
         isDialogueActive = true;
-        isConversationComplete = false;
     }
 
     private void Update()
     {
-        if (isDialogueActive)
+        if (!isDialogueActive) return;
+
+        if (waitingForChoices && Input.GetMouseButtonDown(0) && !isTyping)
         {
-            if (waitingForChoices && Input.GetMouseButtonDown(0) && !isTyping)
-            {
-                ShowChoices();
-                waitingForChoices = false;
-            }
-            else if (waitingForExit && Input.GetMouseButtonDown(0) && !isTyping)
-            {
-                EndDialogue();
-            }
+            ShowChoices();
+            waitingForChoices = false;
+        }
+        else if (waitingForExit && Input.GetMouseButtonDown(0) && !isTyping)
+        {
+            EndDialogue();
+        }
+        else if (showingNPCResponses && Input.GetMouseButtonDown(0) && currentResponseIndex < currentResponse.Count - 1 && !isTyping)
+        {
+            currentResponseIndex++;
+            StartCoroutine(TypeText(currentResponse[currentResponseIndex]));
+        }
+        else if (showingNPCResponses && currentResponseIndex == currentResponse.Count - 1 && Input.GetMouseButtonDown(0) && !isTyping)
+        {
+            EndDialogue();
+        }
 
-            if (!waitingForChoices && !waitingForExit && showingNPCResponses)
-            {
-                if (Input.GetMouseButtonDown(0) && currentResponseIndex < currentResponse.Count - 1 && !isTyping)
-                {
-                    // Показываем следующую реплику NPC с анимацией
-                    currentResponseIndex++;
-                    StartCoroutine(TypeText(currentResponse[currentResponseIndex]));
-                }
-                else if (currentResponseIndex == currentResponse.Count - 1 && Input.GetMouseButtonDown(0) && !isTyping)
-                {
-                    // Все реплики NPC показаны, завершаем диалог
-                    EndDialogue();
-                }
-            }
-
-            // Если есть ответ, переключаем реплики NPC
-            if (!waitingForChoices && !waitingForExit && !showingNPCResponses)
-            {
-                if (!isTyping)
-                {
-                    if (Input.GetKeyDown(KeyCode.Alpha1)) ChooseResponse(1);
-                    if (Input.GetKeyDown(KeyCode.Alpha2)) ChooseResponse(2);
-                    if (Input.GetKeyDown(KeyCode.Alpha3)) ChooseResponse(3);
-                }
-            }
+        if (!waitingForChoices && !waitingForExit && !showingNPCResponses && !isTyping)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1)) ChooseResponse(1);
+            if (Input.GetKeyDown(KeyCode.Alpha2)) ChooseResponse(2);
+            if (Input.GetKeyDown(KeyCode.Alpha3)) ChooseResponse(3);
         }
     }
 
     private void CreateUI()
     {
-        // Создаем UI-объект
         dialogueUI = new GameObject("DialogueUI");
-        Canvas canvas = dialogueUI.AddComponent<Canvas>();
+        var canvas = dialogueUI.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        CanvasScaler scaler = dialogueUI.AddComponent<CanvasScaler>();
+        var scaler = dialogueUI.AddComponent<CanvasScaler>();
         scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         scaler.referenceResolution = new Vector2(1920, 1080);
         dialogueUI.AddComponent<GraphicRaycaster>();
 
-        // Фон (изображение)
-        GameObject panelObj = new GameObject("DialoguePanel");
-        panelObj.transform.SetParent(dialogueUI.transform);
-        Image panelImage = panelObj.AddComponent<Image>();
-        panelImage.sprite = Resources.Load<Sprite>("DialogueBG"); // Загружаем изображение из ресурсов
-        panelImage.color = new Color(1, 1, 1, 1); // Устанавливаем полную видимость
-        RectTransform panelRect = panelObj.GetComponent<RectTransform>();
-        panelRect.anchorMin = new Vector2(0, 0);
-        panelRect.anchorMax = new Vector2(1, 0.3f);
-        panelRect.offsetMin = Vector2.zero;
-        panelRect.offsetMax = Vector2.zero;
+        GameObject panel = new GameObject("DialoguePanel", typeof(Image));
+        panel.transform.SetParent(dialogueUI.transform);
+        var panelImg = panel.GetComponent<Image>();
+        panelImg.sprite = Resources.Load<Sprite>("DialogueBG");
+        panelImg.color = Color.white;
+        var rect = panel.GetComponent<RectTransform>();
+        rect.anchorMin = new Vector2(0, 0);
+        rect.anchorMax = new Vector2(1, 0.3f);
+        rect.offsetMin = rect.offsetMax = Vector2.zero;
 
-        // Текст NPC
-        GameObject textObj = new GameObject("DialogueText");
-        textObj.transform.SetParent(panelObj.transform);
-        dialogueText = textObj.AddComponent<TextMeshProUGUI>();
+        GameObject textObj = new GameObject("DialogueText", typeof(TextMeshProUGUI));
+        textObj.transform.SetParent(panel.transform);
+        dialogueText = textObj.GetComponent<TextMeshProUGUI>();
         dialogueText.fontSize = 60;
         dialogueText.alignment = TextAlignmentOptions.Center;
         dialogueText.color = Color.white;
         dialogueText.font = Resources.Load<TMP_FontAsset>("Fonts/DearType SDF");
-        RectTransform textRect = textObj.GetComponent<RectTransform>();
+        var textRect = textObj.GetComponent<RectTransform>();
         textRect.anchorMin = new Vector2(0.1f, 0.1f);
         textRect.anchorMax = new Vector2(0.9f, 0.9f);
-        textRect.offsetMin = Vector2.zero;
-        textRect.offsetMax = Vector2.zero;
+        textRect.offsetMin = textRect.offsetMax = Vector2.zero;
 
-        // Подсказка "Нажмите ЛКМ"
-        nextButtonHint = new GameObject("NextHint");
-        nextButtonHint.transform.SetParent(panelObj.transform);
-        TextMeshProUGUI hintText = nextButtonHint.AddComponent<TextMeshProUGUI>();
+        nextButtonHint = new GameObject("NextHint", typeof(TextMeshProUGUI));
+        nextButtonHint.transform.SetParent(panel.transform);
+        var hintText = nextButtonHint.GetComponent<TextMeshProUGUI>();
         hintText.text = "Нажмите ЛКМ...";
         hintText.alignment = TextAlignmentOptions.Center;
         hintText.color = Color.gray;
         hintText.fontSize = 24;
-
-        RectTransform hintRect = nextButtonHint.GetComponent<RectTransform>();
+        var hintRect = nextButtonHint.GetComponent<RectTransform>();
         hintRect.anchorMin = new Vector2(0.4f, 0.02f);
         hintRect.anchorMax = new Vector2(0.6f, 0.08f);
-        hintRect.offsetMin = Vector2.zero;
-        hintRect.offsetMax = Vector2.zero;
+        hintRect.offsetMin = hintRect.offsetMax = Vector2.zero;
     }
 
-
-    private IEnumerator TypeText(string textToType)
+    private IEnumerator TypeText(string text)
     {
         isTyping = true;
         dialogueText.text = "";
 
-        foreach (char c in textToType)
+        foreach (char c in text)
         {
             dialogueText.text += c;
             yield return new WaitForSeconds(typingSpeed);
@@ -178,104 +148,91 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowChoices()
     {
-        npcAnimator.SetBool("IsTalking", false);
-        isConversationComplete = true;
-        // Очищаем первую реплику NPC
+        npcAnimator?.SetBool("IsTalking", false);
+        Destroy(nextButtonHint);
         dialogueText.text = "";
 
-        // Убираем подсказку
-        Destroy(nextButtonHint);
-
-        // Создаем контейнер для вариантов ответа внутри черного фона
         choicesContainer = new GameObject("ChoicesContainer");
         choicesContainer.transform.SetParent(dialogueUI.transform);
-        RectTransform choicesRect = choicesContainer.AddComponent<RectTransform>();
+        var rect = choicesContainer.AddComponent<RectTransform>();
+        rect.anchorMin = new Vector2(0.3f, 0f);
+        rect.anchorMax = new Vector2(0.9f, 0.3f);
+        rect.offsetMin = rect.offsetMax = Vector2.zero;
 
-        // Размещаем контейнер в пределах темного фона (нижняя часть экрана)
-        choicesRect.anchorMin = new Vector2(0.3f, 0f);
-        choicesRect.anchorMax = new Vector2(0.9f, 0.3f);
-        choicesRect.offsetMin = Vector2.zero;
-        choicesRect.offsetMax = Vector2.zero;
+        float height = 50f;
+        float spacing = 10f;
+        float startY = (currentChoices.Count - 1) * (height + spacing) / 2f;
 
-        float choiceHeight = 50f; // Высота кнопки
-        float spacing = 10f; // Расстояние между вариантами
-        float startY = (currentChoices.Count - 1) * (choiceHeight + spacing) / 2f; // Центрируем кнопки снизу вверх
-
-        // Перебираем ответы и отображаем их
         for (int i = 0; i < currentChoices.Count; i++)
         {
-            GameObject buttonObj = new GameObject("ChoiceButton" + (i + 1));
+            var buttonObj = new GameObject("ChoiceButton" + (i + 1));
             buttonObj.transform.SetParent(choicesContainer.transform);
-            Button button = buttonObj.AddComponent<Button>();
-            TextMeshProUGUI buttonText = buttonObj.AddComponent<TextMeshProUGUI>();
+            var button = buttonObj.AddComponent<Button>();
+            var text = buttonObj.AddComponent<TextMeshProUGUI>();
 
-            buttonText.text = (i + 1) + ". " + currentChoices[i];
-            buttonText.fontSize = 60;
-            buttonText.alignment = TextAlignmentOptions.Left; // Выравниваем текст влево
-            buttonText.color = Color.white;
-            buttonText.font = Resources.Load<TMP_FontAsset>("Fonts/DearType SDF");
+            text.text = $"{i + 1}. {currentChoices[i]}";
+            text.fontSize = 60;
+            text.alignment = TextAlignmentOptions.Left;
+            text.color = Color.white;
+            text.font = Resources.Load<TMP_FontAsset>("Fonts/DearType SDF");
 
-            RectTransform btnRect = buttonObj.GetComponent<RectTransform>();
+            var btnRect = buttonObj.GetComponent<RectTransform>();
             btnRect.anchorMin = new Vector2(0f, 0.5f);
             btnRect.anchorMax = new Vector2(1f, 0.5f);
             btnRect.pivot = new Vector2(0.5f, 0.5f);
-            btnRect.sizeDelta = new Vector2(0, choiceHeight);
-
-            btnRect.anchoredPosition = new Vector2(0, startY - i * (choiceHeight + spacing));
+            btnRect.sizeDelta = new Vector2(0, height);
+            btnRect.anchoredPosition = new Vector2(0, startY - i * (height + spacing));
 
             int choiceIndex = i + 1;
             button.onClick.AddListener(() => ChooseResponse(choiceIndex));
-
             choiceButtons.Add(button);
         }
     }
 
     private void ChooseResponse(int choice)
     {
-        npcAnimator.SetBool("IsTalking", true);
-        if (npcResponses.ContainsKey(choice))
+        npcAnimator?.SetBool("IsTalking", true);
+
+        if (!npcResponses.ContainsKey(choice)) return;
+
+        Destroy(choicesContainer);
+        choiceButtons.Clear();
+
+        if (npcDialogue && choice == 1)
         {
-            // Очищаем варианты выбора
-            Destroy(choicesContainer);
-            choiceButtons.Clear();
-
-            // Если выбран первый вариант, вызываем метод-заглушку для обновления блокнота
-            if (choice == 1 && !isQuestAccepted)
-            {
-                isQuestAccepted = !isQuestAccepted;
-                npcDialogue.LogEntry();
-                Debug.Log($"Квест добавлен в блокнот");
-            }
-
-            // Показываем ответы NPC
-            currentResponse = npcResponses[choice];
-            currentResponseIndex = 0;
-            StartCoroutine(TypeText(currentResponse[currentResponseIndex])); // Анимация текста
-
-            if (choice == 3)
-            {
-                EndDialogue();
-                return;
-            }
-
-            showingNPCResponses = true;
+            npcDialogue.LogEntry(); // NPC сам решает, логировать ли квест
+            statsManager?.IncrementAcceptedQuest(); // Добавляем сюда, когда выбрали 1
         }
+
+        currentResponse = npcResponses[choice];
+        currentResponseIndex = 0;
+        StartCoroutine(TypeText(currentResponse[currentResponseIndex]));
+
+        if (choice == 3)
+        {
+            EndDialogue();
+        }
+        else if (currentResponseIndex == currentResponse.Count - 1)
+        {
+            waitingForExit = true;
+        }
+
+        showingNPCResponses = true;
     }
 
     private void EndDialogue()
     {
-        npcDialogue.EndDialogue(); // Завершаем диалог на объекте NPC
+        npcDialogue?.EndDialogue();
+
         Destroy(dialogueUI);
         isDialogueActive = false;
         waitingForExit = false;
-        playerMoney = GameObject.FindWithTag("Player").GetComponent<PlayerMoney>();
-        playerMoney.AddMoney(100); // Даем 100 монет
-        bool success = playerMoney.SpendMoney(50); // Пробуем потратить 50
+        showingNPCResponses = false;
 
-        showingNPCResponses = false; // сбрасываем состояние   
-        if (npcAnimator != null)
-        {
-            npcAnimator.SetBool("IsTalking", false); // если используешь bool
-        }
+        npcAnimator?.SetBool("IsTalking", false);
+
+        playerMoney = GameObject.FindWithTag("Player")?.GetComponent<PlayerMoney>();
+        playerMoney?.AddMoney(100);
+        playerMoney?.SpendMoney(50);
     }
 }

@@ -14,7 +14,7 @@ public class NotebookManager : MonoBehaviour
     [SerializeField] private GameObject journal;           // Значок журнала
 
     private List<Quest> quests = new List<Quest>();        // Список всех заданий
-    private bool isNotebookOpen = true;                    // Состояние блокнота (открыт/закрыт)
+    private bool isNotebookOpen = false;                   // Состояние блокнота (открыт/закрыт)
 
     private void Start()
     {
@@ -25,8 +25,9 @@ public class NotebookManager : MonoBehaviour
             quests = new List<Quest>();
         }
 
-
         RefreshQuestList();
+
+        UpdateJournalIconVisibility();
     }
 
     private void Update()
@@ -71,32 +72,34 @@ public class NotebookManager : MonoBehaviour
     // Обновление UI списка заданий
     private void RefreshQuestList()
     {
-        // Удаляем старые элементы из контейнера
         foreach (Transform child in questListContainer)
         {
             Destroy(child.gameObject);
         }
 
-        // Создаем новый элемент для каждого задания
         foreach (Quest quest in quests)
         {
             GameObject questItem = Instantiate(questItemPrefab, questListContainer);
 
-            // Устанавливаем название задания
             TMP_Text titleText = questItem.transform.Find("QuestName")?.GetComponent<TMP_Text>();
             if (titleText != null)
             {
                 titleText.text = quest.title;
             }
 
-            // Устанавливаем состояние чекбокса
             Toggle questToggle = questItem.transform.Find("QuestToggle")?.GetComponent<Toggle>();
             if (questToggle != null)
             {
                 questToggle.isOn = quest.isCompleted;
+                questToggle.interactable = false; // запретить пользователю изменять вручную
             }
 
-            // Настраиваем кнопку для отображения подробностей
+            Slider progressSlider = questItem.transform.Find("QuestProgress")?.GetComponent<Slider>();
+            if (progressSlider != null)
+            {
+                progressSlider.value = quest.progress;
+            }
+
             Button questButton = questItem.transform.Find("QuestName")?.GetComponent<Button>();
             if (questButton != null)
             {
@@ -104,6 +107,7 @@ public class NotebookManager : MonoBehaviour
             }
         }
     }
+
 
     // Показать подробности задания
     private void ShowQuestDetails(Quest quest)
@@ -124,4 +128,33 @@ public class NotebookManager : MonoBehaviour
             journal.SetActive(!isNotebookOpen && !instructionsManager.IsInstructionsOpen());
         }
     }
+    public void CompleteQuestWithResult(string questTitle, Task1 task)
+    {
+        foreach (Quest quest in quests)
+        {
+            if (quest.title == questTitle)
+            {
+                if (task.CompletedCorrectly && task.TimeSpent <= task.AllowedTime)
+                {
+                    quest.isCompleted = true;
+                    quest.progress = 1f; // 100%
+                }
+                else if (task.CompletedCorrectly && task.TimeSpent > task.AllowedTime)
+                {
+                    quest.isCompleted = true;
+                    quest.progress = 0.55f; // 55%
+                }
+                else if (!task.CompletedCorrectly)
+                {
+                    quest.isCompleted = false;
+                    quest.progress = 0.1f; // 10%
+                }
+
+                break;
+            }
+        }
+
+        RefreshQuestList();
+    }
+
 }

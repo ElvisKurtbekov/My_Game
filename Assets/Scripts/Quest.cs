@@ -5,15 +5,17 @@ using UnityEngine;
 [System.Serializable]
 public class Quest
 {
-    public string title;          // Заголовок задания
-    public string description;    // Подробное описание задания
-    public bool isCompleted;      // Статус выполнения задания
+    public string title;
+    public string description;
+    public bool isCompleted;
+    public float progress; // от 0 до 1
 
-    // Конструктор, который принимает 3 параметра
-    public Quest(string title, string description, bool isCompleted)
+    public Quest(string title, string description, bool isCompleted, float progress = 0f)
     {
         this.title = title;
         this.description = description;
         this.isCompleted = isCompleted;
+        this.progress = progress;
     }
 }
+
