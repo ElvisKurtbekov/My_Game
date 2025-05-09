@@ -32,7 +32,7 @@ public class DialogueManager : MonoBehaviour
     public NPCDialogue npcDialogue;
     public QuestCompletionDialogue questComplete;
     public Animator npcAnimator;
-    public PlayerMoney playerMoney;
+    
 
     [SerializeField] private GameStatsManager statsManager; // Добавляем вверху
 
@@ -230,9 +230,5 @@ public class DialogueManager : MonoBehaviour
         showingNPCResponses = false;
 
         npcAnimator?.SetBool("IsTalking", false);
-
-        playerMoney = GameObject.FindWithTag("Player")?.GetComponent<PlayerMoney>();
-        playerMoney?.AddMoney(100);
-        playerMoney?.SpendMoney(50);
     }
 }

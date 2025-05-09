@@ -2,18 +2,43 @@ using UnityEngine;
 
 public class PlayerMoney : MonoBehaviour
 {
-    public int currentMoney = 0;
+    public static PlayerMoney Instance { get; private set; }
 
-    public PlayerMoneyUI moneyUI; // Сюда подцепим UI
+    public int currentMoney = 5000;
 
-    [SerializeField] private GameStatsManager statsManager;  // Ссылка на GameStatsManager
+    private PlayerMoneyUI moneyUI;
+    private GameStatsManager statsManager;
+
+    private void Awake()
+    {
+        // Singleton и DontDestroy
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        moneyUI = FindObjectOfType<PlayerMoneyUI>();
+        statsManager = FindObjectOfType<GameStatsManager>();
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        // Попробуй снова найти UI, если сцена сменилась
+        moneyUI = FindObjectOfType<PlayerMoneyUI>();
+        statsManager = FindObjectOfType<GameStatsManager>();
+        moneyUI?.UpdateMoneyUI();
+    }
 
     public void AddMoney(int amount)
     {
         currentMoney += amount;
         Debug.Log("Добавлено денег: " + amount + ". Текущий баланс: " + currentMoney);
         moneyUI?.UpdateMoneyUI();
-        statsManager.AddMoneyEarned(amount);
+        statsManager?.AddMoneyEarned(amount);
     }
 
     public bool SpendMoney(int amount)
@@ -21,9 +46,9 @@ public class PlayerMoney : MonoBehaviour
         if (currentMoney >= amount)
         {
             currentMoney -= amount;
-            statsManager.AddMoneySpent(amount);
             Debug.Log("Потрачено денег: " + amount + ". Осталось: " + currentMoney);
             moneyUI?.UpdateMoneyUI();
+            statsManager?.AddMoneySpent(amount);
             return true;
         }
         else
@@ -32,9 +57,6 @@ public class PlayerMoney : MonoBehaviour
             return false;
         }
     }
-    public int GetMoney()
-    {
-        return currentMoney;
-    }
 
+    public int GetMoney() => currentMoney;
 }

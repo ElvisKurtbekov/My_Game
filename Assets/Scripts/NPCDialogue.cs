@@ -80,9 +80,18 @@ public class NPCDialogue : MonoBehaviour
 
     public void StartDialogue()
     {
+        if (!hasQuestBeenLogged && assignedQuest != null)
+        {
+            QuestManager.Instance.currentTask = taskResult;
+            hasQuestBeenLogged = true;
+
+            var notebook = FindObjectOfType<NotebookManager>();
+            notebook.AddQuest(assignedQuest);
+        }
         if (isDialogueActive) return;
 
         HideHint();
+
         var responseDict = new Dictionary<int, List<string>>();
         for (int i = 0; i < playerChoices.Count && i < npcResponses.Count; i++)
         {

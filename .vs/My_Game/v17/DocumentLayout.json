@@ -1,42 +1,121 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\krief\\My_Game\\",
+  "WorkspaceRootPath": "D:\\project\\Game\\My_Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|c:\\users\\krief\\my_game\\assets\\scripts\\statspagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statspagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|d:\\project\\game\\my_game\\assets\\scripts\\npcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\npcdialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|C:\\Users\\krief\\My_Game\\assets\\scripts\\task1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\npcpopulator\\scripts\\npcfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\npcpopulator\\scripts\\npcfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\npcpopulator\\scripts\\npcindividual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\npcpopulator\\scripts\\npcindividual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\npcpopulator\\scripts\\npcwaypointscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\npcpopulator\\scripts\\npcwaypointscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\idlebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\idlebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\walkbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\walkbehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\swerz\\Downloads\\QuestManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\questmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\questmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\productinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\productinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\task1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\task1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|C:\\Users\\krief\\My_Game\\assets\\scripts\\gamestatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|c:\\users\\krief\\my_game\\assets\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|c:\\users\\krief\\my_game\\assets\\scripts\\playermoney.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermoney.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|c:\\users\\krief\\my_game\\assets\\scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|c:\\users\\krief\\my_game\\assets\\scripts\\questcompletiondialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\questcompletiondialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\questcompletiondialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|c:\\users\\krief\\my_game\\assets\\scripts\\teleporthome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\playerscenepositionsetter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerscenepositionsetter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\playermoney.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermoney.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\gamestatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamestatsmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\dontdestroy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dontdestroy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialoguemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\charactercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\charactercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\teleporthome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teleporthome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|C:\\Users\\krief\\My_Game\\assets\\scripts\\instructionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\playerspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\playermoneyui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermoneyui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\instructionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\instructionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\notebookmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\notebookmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\statspagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statspagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|D:\\project\\Game\\My_Game\\assets\\scripts\\teleporthospiral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F142634E-B034-A83F-1C53-31C5E4DA40D0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teleporthospiral.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,119 +125,350 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DialogueManager.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\DialogueManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DialogueManager.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\DialogueManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DialogueManager.cs",
-              "ViewState": "AgIAALMAAAAAAAAAAAAswMsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:16:41.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Teleport.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\Teleport.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Teleport.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\Teleport.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Teleport.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:07:58.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PlayerMoney.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\PlayerMoney.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMoney.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\PlayerMoney.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerMoney.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAcwCcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:07:02.248Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "QuestCompletionDialogue.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\QuestCompletionDialogue.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\QuestCompletionDialogue.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\QuestCompletionDialogue.cs",
-              "RelativeToolTip": "Assets\\Scripts\\QuestCompletionDialogue.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAkwIkAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:06:16.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StatsPageManager.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\StatsPageManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\StatsPageManager.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\StatsPageManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\StatsPageManager.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwFAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:52:46.42Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Task1.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\Task1.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Task1.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\Task1.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Task1.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAUwBsAAAAqAAAAAAAAAA==",
+              "Title": "npcFactory.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\NPCPopulator\\Scripts\\npcFactory.cs",
+              "RelativeDocumentMoniker": "Assets\\NPCPopulator\\Scripts\\npcFactory.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\NPCPopulator\\Scripts\\npcFactory.cs",
+              "RelativeToolTip": "Assets\\NPCPopulator\\Scripts\\npcFactory.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAUwFoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T19:22:53.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T11:44:03.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "npcWaypointScript.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\NPCPopulator\\Scripts\\npcWaypointScript.cs",
+              "RelativeDocumentMoniker": "Assets\\NPCPopulator\\Scripts\\npcWaypointScript.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\NPCPopulator\\Scripts\\npcWaypointScript.cs",
+              "RelativeToolTip": "Assets\\NPCPopulator\\Scripts\\npcWaypointScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T11:41:22.732Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GameStatsManager.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\GameStatsManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\GameStatsManager.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\GameStatsManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\GameStatsManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "Title": "npcIndividual.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\NPCPopulator\\Scripts\\npcIndividual.cs",
+              "RelativeDocumentMoniker": "Assets\\NPCPopulator\\Scripts\\npcIndividual.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\NPCPopulator\\Scripts\\npcIndividual.cs",
+              "RelativeToolTip": "Assets\\NPCPopulator\\Scripts\\npcIndividual.cs",
+              "ViewState": "AgIAAGQBAAAAAAAAAAAkwJUBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:56:58.209Z",
+              "WhenOpened": "2025-05-08T10:16:37.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WalkBehaviour.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\WalkBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\WalkBehaviour.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\WalkBehaviour.cs",
+              "RelativeToolTip": "Assets\\WalkBehaviour.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAUwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T19:19:09.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IdleBehaviour.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\IdleBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\IdleBehaviour.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\IdleBehaviour.cs",
+              "RelativeToolTip": "Assets\\IdleBehaviour.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T19:08:36.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "QuestManager.cs",
+              "DocumentMoniker": "C:\\Users\\swerz\\Downloads\\QuestManager.cs",
+              "ToolTip": "C:\\Users\\swerz\\Downloads\\QuestManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T19:17:44.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "test.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\test.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\test.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\test.cs",
+              "RelativeToolTip": "Assets\\Scripts\\test.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T19:08:27.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DialogueManager.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\DialogueManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DialogueManager.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\DialogueManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DialogueManager.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAADwv+oAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T21:16:41.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductInteraction.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\ProductInteraction.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ProductInteraction.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\ProductInteraction.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ProductInteraction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T21:46:51.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NPCDialogue.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\NPCDialogue.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NPCDialogue.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\NPCDialogue.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NPCDialogue.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAYwHkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T21:28:12.751Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "TeleportHome.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\TeleportHome.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\TeleportHome.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\TeleportHome.cs",
-              "RelativeToolTip": "Assets\\Scripts\\TeleportHome.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
+              "Title": "QuestManager.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\QuestManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\QuestManager.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\QuestManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\QuestManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:08:19.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T22:18:32.408Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T21:27:39.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CharacterControl.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\CharacterControl.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CharacterControl.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\CharacterControl.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CharacterControl.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAkwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T14:29:05.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DontDestroy.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\DontDestroy.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DontDestroy.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\DontDestroy.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DontDestroy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T14:29:54.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Quest.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\Quest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Quest.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\Quest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Quest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T14:40:29.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TeleportHome.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\TeleportHome.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TeleportHome.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\TeleportHome.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TeleportHome.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T21:08:19.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GameStatsManager.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\GameStatsManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameStatsManager.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\GameStatsManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameStatsManager.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAzwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T19:56:58.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PlayerMoney.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\PlayerMoney.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMoney.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\PlayerMoney.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerMoney.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T21:07:02.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PlayerMoneyUI.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\PlayerMoneyUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMoneyUI.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\PlayerMoneyUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerMoneyUI.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T06:59:46.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "QuestCompletionDialogue.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\QuestCompletionDialogue.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\QuestCompletionDialogue.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\QuestCompletionDialogue.cs",
+              "RelativeToolTip": "Assets\\Scripts\\QuestCompletionDialogue.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAADwv5kAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T21:06:16.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Task1.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\Task1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Task1.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\Task1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Task1.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T19:22:53.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PlayerSpawner.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\PlayerSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerSpawner.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\PlayerSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerSpawner.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T08:05:52.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PlayerScenePositionSetter.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\PlayerScenePositionSetter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerScenePositionSetter.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\PlayerScenePositionSetter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerScenePositionSetter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T08:32:45.71Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "StatsPageManager.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\StatsPageManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StatsPageManager.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\StatsPageManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StatsPageManager.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwFAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T19:52:46.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Teleport.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\Teleport.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Teleport.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\Teleport.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Teleport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T21:07:58.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "TeleportHospiral.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\TeleportHospiral.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TeleportHospiral.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\TeleportHospiral.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TeleportHospiral.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T19:39:00.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "NotebookManager.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\NotebookManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NotebookManager.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\NotebookManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NotebookManager.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAkwIIAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T21:27:58.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\Product.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Product.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\Product.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T21:46:16.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "InstructionManager.cs",
-              "DocumentMoniker": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\InstructionManager.cs",
+              "DocumentMoniker": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\InstructionManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InstructionManager.cs",
-              "ToolTip": "C:\\Users\\krief\\My_Game\\Assets\\Scripts\\InstructionManager.cs",
+              "ToolTip": "D:\\project\\Game\\My_Game\\Assets\\Scripts\\InstructionManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\InstructionManager.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAAwJIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
